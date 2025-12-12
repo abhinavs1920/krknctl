@@ -6,9 +6,14 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"io"
+	"os"
+	"regexp"
+	"strconv"
+	"strings"
+
 	dockercontainer "github.com/docker/docker/api/types/container"
 	dockerimage "github.com/docker/docker/api/types/image"
-
 	"github.com/docker/docker/api/types/mount"
 	"github.com/docker/docker/client"
 	"github.com/docker/docker/pkg/jsonmessage"
@@ -19,11 +24,7 @@ import (
 	orchestratormodels "github.com/krkn-chaos/krknctl/pkg/scenarioorchestrator/models"
 	"github.com/krkn-chaos/krknctl/pkg/scenarioorchestrator/utils"
 	"github.com/krkn-chaos/krknctl/pkg/typing"
-	"io"
-	"os"
-	"regexp"
-	"strconv"
-	"strings"
+
 )
 
 type ScenarioOrchestrator struct {
@@ -52,10 +53,10 @@ func (c *ScenarioOrchestrator) Run(
 		return nil, err
 	}
 	if !cache || !exists {
-		err := pullImage(ctx, cli, image, commChan, registry)
-		if err != nil {
-			return nil, err
-		}
+		// err := pullImage(ctx, cli, image, commChan, registry)
+		// if err != nil {
+		// 	return nil, err
+		// }
 	}
 
 	var envVars []string

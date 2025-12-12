@@ -1,0 +1,215 @@
+2025-11-15 13:58:47,587 - INFO - Starting kraken 123
+2025-11-15 13:58:47,588 - INFO - Execution mode set to(final testing): controller
+2025-11-15 13:58:47,597 - INFO - Initializing client to talk to the Kubernetes cluster
+2025-11-15 13:58:47,598 - INFO - Generated a uuid for the run: de3c0bc0-e6c4-490b-854c-004e4f1f3d1f
+2025-11-15 13:58:47,621 - INFO - Detected distribution kubernetes
+2025-11-15 13:58:47,656 - INFO - Publishing kraken status at http://0.0.0.0:8081
+2025-11-15 13:58:47,658 - INFO - Starting http server at http://0.0.0.0:8081
+
+2025-11-15 13:58:47,658 - INFO - Fetching cluster info
+2025-11-15 13:58:47,659 - INFO - Cluster version CRD not detected, skipping
+2025-11-15 13:58:47,676 - INFO - Loaded SLO configuration from config/alerts.yaml
+2025-11-15 13:58:47,677 - INFO - Server URL: https://127.0.0.1:34035
+2025-11-15 13:58:47,679 - INFO - Daemon mode not enabled, will run through 1 iterations
+
+2025-11-15 13:58:52,433 - INFO - 📣 `ScenarioPluginFactory`: types from config.yaml mapped to respective classes for execution:
+2025-11-15 13:58:52,434 - INFO -   ✅ type: application_outages_scenarios ➡️ `ApplicationOutageScenarioPlugin` 
+2025-11-15 13:58:52,435 - INFO -   ✅ type: container_scenarios ➡️ `ContainerScenarioPlugin` 
+2025-11-15 13:58:52,435 - INFO -   ✅ type: hog_scenarios ➡️ `HogsScenarioPlugin` 
+2025-11-15 13:58:52,436 - INFO -   ✅ type: kubevirt_vm_outage ➡️ `KubevirtVmOutageScenarioPlugin` 
+2025-11-15 13:58:52,436 - INFO -   ✅ type: managedcluster_scenarios ➡️ `ManagedClusterScenarioPlugin` 
+2025-11-15 13:58:52,437 - INFO -   ✅ types: [pod_network_scenarios, ingress_node_scenarios] ➡️ `NativeScenarioPlugin` 
+2025-11-15 13:58:52,438 - INFO -   ✅ type: network_chaos_scenarios ➡️ `NetworkChaosScenarioPlugin` 
+2025-11-15 13:58:52,438 - INFO -   ✅ type: network_chaos_ng_scenarios ➡️ `NetworkChaosNgScenarioPlugin` 
+2025-11-15 13:58:52,439 - INFO -   ✅ type: node_scenarios ➡️ `NodeActionsScenarioPlugin` 
+2025-11-15 13:58:52,440 - INFO -   ✅ type: pod_disruption_scenarios ➡️ `PodDisruptionScenarioPlugin` 
+2025-11-15 13:58:52,441 - INFO -   ✅ type: pvc_scenarios ➡️ `PvcScenarioPlugin` 
+2025-11-15 13:58:52,442 - INFO -   ✅ type: service_disruption_scenarios ➡️ `ServiceDisruptionScenarioPlugin` 
+2025-11-15 13:58:52,443 - INFO -   ✅ type: service_hijacking_scenarios ➡️ `ServiceHijackingScenarioPlugin` 
+2025-11-15 13:58:52,443 - INFO -   ✅ type: cluster_shut_down_scenarios ➡️ `ShutDownScenarioPlugin` 
+2025-11-15 13:58:52,444 - INFO -   ✅ type: syn_flood_scenarios ➡️ `SynFloodScenarioPlugin` 
+2025-11-15 13:58:52,445 - INFO -   ✅ type: time_scenarios ➡️ `TimeActionsScenarioPlugin` 
+2025-11-15 13:58:52,445 - INFO -   ✅ type: zone_outages_scenarios ➡️ `ZoneOutageScenarioPlugin` 
+2025-11-15 13:58:52,446 - INFO - 
+
+2025-11-15 13:58:52,446 - INFO - Failed to load Scenario Plugins:
+
+2025-11-15 13:58:52,447 - ERROR - ⛔ Class: <module> Module: krkn.scenario_plugins.node_actions.alibaba_node_scenarios
+2025-11-15 13:58:52,447 - ERROR - ⚠️ Import failed: No module named 'aliyunsdkcore.vendored.six.moves'
+
+2025-11-15 13:58:52,449 - INFO - health checks config is not defined, skipping them
+2025-11-15 13:58:52,449 - INFO - kube virt checks config is not defined, skipping them
+2025-11-15 13:58:52,450 - INFO - Executing scenarios for iteration 0
+2025-11-15 13:58:52,451 - INFO - connection set up
+2025-11-15 13:58:52,452 - INFO - response RUN
+2025-11-15 13:58:52,469 - INFO - Signal handlers registered globally
+2025-11-15 13:58:52,470 - INFO - Running HogsScenarioPlugin: ['hog_scenarios'] -> scenarios/kube/cpu-hog.yml
+2025-11-15 13:58:52,471 - INFO - Set rollback_context: 1763215132471243680-de3c0bc0-e6c4-490b-854c-004e4f1f3d1f for scenario_type: hog_scenarios RollbackHandler
+2025-11-15 13:58:52,505 - ERROR - scenario exception: no available nodes to schedule workload
+2025-11-15 13:58:52,507 - WARNING - Skip execution for run_uuid=de3c0bc0-e6c4-490b-854c-004e4f1f3d1f, scenario_type=hog_scenarios
+2025-11-15 13:58:52,508 - WARNING - Skip cleanup for run_uuid=de3c0bc0-e6c4-490b-854c-004e4f1f3d1f, scenario_type=hog_scenarios
+2025-11-15 13:58:52,542 - INFO - Find cluster events in file /tmp/events.json
+2025-11-15 13:58:52,543 - INFO - wating 60 before running the next scenario
+2025-11-15 13:59:52,544 - INFO - Evaluating 10 SLOs over window 2025-11-15 13:58:52 – 2025-11-15 13:58:52
+2025-11-15 13:59:52,566 - WARNING - SLO 'Persistent volume usage > 90% for {{$labels.persistentvolumeclaim}} in {{$labels.namespace}}.' query returned no data; excluding from score.
+2025-11-15 13:59:52,572 - WARNING - SLO 'Pod {{$labels.pod}} in namespace {{$labels.namespace}} is not ready.' query returned no data; excluding from score.
+2025-11-15 13:59:52,578 - WARNING - SLO 'Deployment {{$labels.deployment}} availability < 90%.' query returned no data; excluding from score.
+2025-11-15 13:59:52,583 - WARNING - SLO 'Container {{$labels.container}} in {{$labels.namespace}} is CPU throttled > 20%.' query returned no data; excluding from score.
+2025-11-15 13:59:52,588 - WARNING - SLO 'Pod {{$labels.pod}} has been pending for more than 5 minutes.' query returned no data; excluding from score.
+2025-11-15 13:59:52,589 - INFO - connection set up
+2025-11-15 13:59:52,590 - INFO - response RUN
+2025-11-15 13:59:52,602 - INFO - Running NetworkChaosNgScenarioPlugin: ['network_chaos_ng_scenarios'] -> scenarios/kube/pod-network-filter.yml
+2025-11-15 13:59:52,605 - INFO - running network_chaos scenario: pod_network_filter
+2025-11-15 13:59:52,614 - ERROR - Exception when calling CoreV1Api-><bound method CoreV1Api.list_namespaced_pod of <kubernetes.client.api.core_v1_api.CoreV1Api object at 0x7fca00dea6c0>>: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '693ea114-8178-405d-8009-a6684cc15e96', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': '1ca540f2-a432-4b59-8aea-f654cde75fc7', 'X-Kubernetes-Pf-Prioritylevel-Uid': '4a1a67eb-db49-4d0e-9d6e-ffa4bd7ddef7', 'Date': 'Sat, 15 Nov 2025 13:59:52 GMT', 'Content-Length': '202'})
+HTTP response body: {
+  "kind": "Status",
+  "apiVersion": "v1",
+  "metadata": {},
+  "status": "Failure",
+  "message": "found '\u003c', expected: !, identifier, or 'end of string'",
+  "reason": "BadRequest",
+  "code": 400
+}
+
+
+2025-11-15 13:59:52,615 - WARNING - no targets found for pod_network_filter network chaos scenario with selector <pod_selector> with target type NetworkChaosScenarioType.Pod
+2025-11-15 13:59:52,616 - ERROR - Sample larger than population or is negative
+2025-11-15 13:59:52,616 - WARNING - Skip execution for run_uuid=de3c0bc0-e6c4-490b-854c-004e4f1f3d1f, scenario_type=network_chaos_ng_scenarios
+2025-11-15 13:59:52,616 - WARNING - Skip cleanup for run_uuid=de3c0bc0-e6c4-490b-854c-004e4f1f3d1f, scenario_type=network_chaos_ng_scenarios
+2025-11-15 13:59:52,629 - INFO - Find cluster events in file /tmp/events.json
+2025-11-15 13:59:52,630 - INFO - wating 60 before running the next scenario
+2025-11-15 14:00:52,631 - INFO - Evaluating 10 SLOs over window 2025-11-15 13:59:52 – 2025-11-15 13:59:52
+2025-11-15 14:00:52,654 - WARNING - SLO 'Persistent volume usage > 90% for {{$labels.persistentvolumeclaim}} in {{$labels.namespace}}.' query returned no data; excluding from score.
+2025-11-15 14:00:52,658 - WARNING - SLO 'Pod {{$labels.pod}} in namespace {{$labels.namespace}} is not ready.' query returned no data; excluding from score.
+2025-11-15 14:00:52,664 - WARNING - SLO 'Deployment {{$labels.deployment}} availability < 90%.' query returned no data; excluding from score.
+2025-11-15 14:00:52,667 - WARNING - SLO 'Container {{$labels.container}} in {{$labels.namespace}} is CPU throttled > 20%.' query returned no data; excluding from score.
+2025-11-15 14:00:52,670 - WARNING - SLO 'Pod {{$labels.pod}} has been pending for more than 5 minutes.' query returned no data; excluding from score.
+2025-11-15 14:00:52,671 - INFO - collecting Kubernetes cluster metadata....
+2025-11-15 14:00:52,910 - INFO - Evaluating 10 SLOs over window 2025-11-15 13:58:47 – 2025-11-15 14:00:52
+2025-11-15 14:00:52,933 - WARNING - SLO 'Persistent volume usage > 90% for {{$labels.persistentvolumeclaim}} in {{$labels.namespace}}.' query returned no data; excluding from score.
+2025-11-15 14:00:52,937 - WARNING - SLO 'Pod {{$labels.pod}} in namespace {{$labels.namespace}} is not ready.' query returned no data; excluding from score.
+2025-11-15 14:00:52,947 - WARNING - SLO 'Deployment {{$labels.deployment}} availability < 90%.' query returned no data; excluding from score.
+2025-11-15 14:00:52,951 - WARNING - SLO 'Container {{$labels.container}} in {{$labels.namespace}} is CPU throttled > 20%.' query returned no data; excluding from score.
+2025-11-15 14:00:52,955 - WARNING - SLO 'Pod {{$labels.pod}} has been pending for more than 5 minutes.' query returned no data; excluding from score.
+2025-11-15 14:00:52,956 - INFO - Resiliency report logged to stdout for krknctl.
+2025-11-15 14:00:52,958 - INFO - Chaos data:
+{
+    "telemetry": {
+        "scenarios": [
+            {
+                "start_timestamp": 1763215132,
+                "end_timestamp": 1763215132,
+                "scenario": "scenarios/kube/cpu-hog.yml",
+                "scenario_type": "hog_scenarios",
+                "exit_status": 1,
+                "parameters_base64": "",
+                "parameters": {
+                    "cpu-load-percentage": 90,
+                    "cpu-method": "all",
+                    "duration": 60,
+                    "hog-type": "cpu",
+                    "image": "quay.io/krkn-chaos/krkn-hog",
+                    "namespace": "default",
+                    "node-selector": "node-role.kubernetes.io/worker=",
+                    "number-of-nodes": 2,
+                    "taints": [],
+                    "workers": ""
+                },
+                "affected_pods": {
+                    "recovered": [],
+                    "unrecovered": [],
+                    "error": null
+                },
+                "affected_nodes": [],
+                "cluster_events": []
+            },
+            {
+                "start_timestamp": 1763215192,
+                "end_timestamp": 1763215192,
+                "scenario": "scenarios/kube/pod-network-filter.yml",
+                "scenario_type": "network_chaos_ng_scenarios",
+                "exit_status": 1,
+                "parameters_base64": "",
+                "parameters": [
+                    {
+                        "egress": true,
+                        "execution": "parallel",
+                        "id": "pod_network_filter",
+                        "image": "quay.io/krkn-chaos/krkn-network-chaos:latest",
+                        "ingress": false,
+                        "instance_count": 1,
+                        "interfaces": [],
+                        "label_selector": "<pod_selector>",
+                        "namespace": "default",
+                        "ports": [
+                            53
+                        ],
+                        "protocols": [
+                            "tcp",
+                            "udp"
+                        ],
+                        "service_account": "",
+                        "taints": [],
+                        "target": "<pod_name>",
+                        "test_duration": 60,
+                        "wait_duration": 1
+                    }
+                ],
+                "affected_pods": {
+                    "recovered": [],
+                    "unrecovered": [],
+                    "error": null
+                },
+                "affected_nodes": [],
+                "cluster_events": []
+            }
+        ],
+        "node_summary_infos": [
+            {
+                "count": null,
+                "architecture": "amd64",
+                "instance_type": "unknown",
+                "nodes_type": "unknown",
+                "kernel_version": "5.15.167.4-microsoft-standard-WSL2",
+                "kubelet_version": "v1.27.3",
+                "os_version": "Debian GNU/Linux 11 (bullseye)"
+            }
+        ],
+        "node_taints": [],
+        "kubernetes_objects_count": {
+            "ConfigMap": 16,
+            "Pod": 14,
+            "Deployment": 5
+        },
+        "network_plugins": [
+            "Unknown"
+        ],
+        "timestamp": "2025-11-15T13:58:47Z",
+        "health_checks": null,
+        "virt_checks": null,
+        "total_node_count": 1,
+        "cloud_infrastructure": null,
+        "cloud_type": null,
+        "cluster_version": "1.27",
+        "major_version": ".27",
+        "run_uuid": "de3c0bc0-e6c4-490b-854c-004e4f1f3d1f",
+        "job_status": false,
+        "build_url": "manual",
+        "overall_resiliency_report": {
+            "scenarios": {
+                "scenarios/kube/cpu-hog.yml": 44,
+                "scenarios/kube/pod-network-filter.yml": 44
+            },
+            "resiliency_score": 44,
+            "system_stability_score": 44,
+            "passed_slos": 2,
+            "total_slos": 5
+        }
+    },
+    "critical_alerts": null
+}
+2025-11-15 14:00:52,959 - INFO - telemetry collection disabled, skipping.
+2025-11-15 14:00:52,959 - ERROR - Post scenarios are still failing at the end of all iterations
+2025-11-15 14:00:52,963 - INFO - Saving logs to /mnt/d/oss/krkn/kraken_execution.log
